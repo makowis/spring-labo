@@ -20,7 +20,7 @@ public class HelloControllerTests {
     @Test
     void  helloTest() {
         var name = "World";
-        assertThat(controller.hello(name)).isEqualTo(String.format("Hello %s!",name));
+        assertThat(controller.hello(name)).isEqualTo(String.format("Hello %s!aaaa",name));
     }
 
 }
