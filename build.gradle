@@ -17,6 +17,24 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
+
+	testLogging {
+		// イベントを出力する (TestLogEvent)
+		events 'started', 'skipped', 'passed', 'failed'
+		// 例外発生時の出力設定 (TestExceptionFormat)
+		exceptionFormat 'full'
+	}
+
+	afterSuite { desc, result ->
+		if (!desc.parent) {
+			println "\nTest result: ${result.resultType}"
+			println "Test summary: ${result.testCount} tests, " +
+					"${result.successfulTestCount} succeeded, " +
+					"${result.failedTestCount} failed, " +
+					"${result.skippedTestCount} skipped"
+		}
+	}
 }
+
