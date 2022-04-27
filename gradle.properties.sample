@@ -1,0 +1,3 @@
+datasource.url=jdbc:postgresql://localhost:5432/xxxx
+datasource.user=xxxx
+datasource.password=xxxx
