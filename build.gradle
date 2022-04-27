@@ -46,7 +46,3 @@ test {
 		}
 	}
 }
-
-task hoge {
-	println(System.getenv(DATA_BASE_URL))
-}
